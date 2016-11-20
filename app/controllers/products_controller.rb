@@ -41,10 +41,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    contact_id = params[:id]
-    contact = Contact.find_by(id: contact_id)
-    contact.destroy
-    flash[:success] = "Contact destroyed!"
-    redirect_to '/contacts'
+    product_id = params[:id]
+    product = Product.find_by(id: product_id)
+    product.destroy
+    redirect_to '/products'
   end
 end
